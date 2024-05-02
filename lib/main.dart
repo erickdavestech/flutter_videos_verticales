@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
+// Using Provider as changeStates
 
+import 'package:flutter/material.dart';
 import 'config/app_theme.dart';
 
 void main() => runApp(const MyApp());
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
