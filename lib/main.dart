@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'config/app_theme.dart';
+
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -8,6 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: AppTheme().getTheme(),
       title: 'CLone Toktik App',
       home: Scaffold(
         appBar: AppBar(
