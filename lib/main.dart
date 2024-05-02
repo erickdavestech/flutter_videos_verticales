@@ -1,8 +1,9 @@
 // Using Provider as changeStates
-
 import 'package:flutter/material.dart';
+import 'package:flutter_videos_verticales/config/app_theme.dart';
+import 'package:flutter_videos_verticales/presentation/providers_logic/discover_providers.dart';
 import 'package:flutter_videos_verticales/presentation/screens/discover/discover_screens.dart';
-import 'config/app_theme.dart';
+import 'package:provider/provider.dart';
 
 void main() => runApp(const MyApp());
 
@@ -11,11 +12,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: AppTheme().getTheme(),
-      title: 'CLone Toktik App',
-      home: const DiscoverScreen(),
+    return MultiProvider(
+      providers: [ChangeNotifierProvider(create: (_) => DiscoverProvider())],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme().getTheme(),
+        title: 'CLone Toktik App',
+        home: const DiscoverScreen(),
+      ),
     );
   }
 }
