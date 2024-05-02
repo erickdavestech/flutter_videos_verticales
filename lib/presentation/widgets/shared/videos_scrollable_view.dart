@@ -8,6 +8,7 @@ class VideoScrollableView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageView(
+      physics: const BouncingScrollPhysics(),
       children: [
         Container(
           color: Colors.red,
