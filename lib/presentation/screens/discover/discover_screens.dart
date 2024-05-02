@@ -11,7 +11,7 @@ class DiscoverScreen extends StatelessWidget {
 
     return Scaffold(
       body: discoverProvider.initialLoading
-          ? const Center(child: CircularProgressIndicator())
+          ? const Center(child: CircularProgressIndicator(strokeAlign: 2,))
           : const Placeholder(),
     );
   }
