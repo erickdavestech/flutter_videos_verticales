@@ -1,9 +1,11 @@
 // Using Provider as changeStates
 
 import 'package:flutter/material.dart';
+import 'package:flutter_videos_verticales/presentation/screens/discover/discover_screens.dart';
 import 'config/app_theme.dart';
 
 void main() => runApp(const MyApp());
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -13,14 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme().getTheme(),
       title: 'CLone Toktik App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Clone TokTok '),
-        ),
-        body: const Center(
-          child: Text('Hi Im Daves'),
-        ),
-      ),
+      home: const DiscoverScreen(),
     );
   }
 }
