@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_videos_verticales/config/helpers/human_formats.dart';
 import 'package:flutter_videos_verticales/domain/entities/video_post.dart';
@@ -18,7 +19,16 @@ class VideoButtons extends StatelessWidget {
         _MyCustomWidget(
           value: video.views,
           iconData: Icons.remove_red_eye_outlined,
-        )
+        ),
+        // New Button sin texto, like play button
+        // Using anime_do  animate_do: ^3.3.4 to animate the play button
+        SpinPerfect(
+            infinite: true,
+            duration: const Duration(seconds: 5),
+            child: const _MyCustomWidget(
+              value: 0,
+              iconData: Icons.play_circle_outlined,
+            ))
       ],
     );
   }
@@ -46,7 +56,8 @@ class _MyCustomWidget extends StatelessWidget {
             )),
         //   Text('$value'),
         // Numeros Legibles utilizando paquete intl intl 0.19.0 flutter pub add intl
-        Text(HumanFormats.humanReadbleNumber(value.toDouble())),
+        // Not showing value on screen
+        if (value > 0) Text(HumanFormats.humanReadbleNumber(value.toDouble())),
       ],
     );
   }
